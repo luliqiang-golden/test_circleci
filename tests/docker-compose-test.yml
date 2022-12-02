@@ -1,0 +1,45 @@
+version: '3.6'
+services:
+  api-test:
+    build: ../
+    container_name: api-test
+    depends_on:
+      - db
+    dns: 8.8.8.8
+    image: s2s-api-test
+    networks:
+      - s2s-test
+    ports:
+      - "5001:5000"
+    tty: true
+    volumes:
+      - ../:/api/
+  db:
+    build: ./db-test/
+    container_name: db
+    env_file:
+      - ../.dockerenvtest
+    image: s2s-db-test
+    networks:
+      - s2s-test
+    ports:
+      - "5433:5432"
+  pgadmin:
+    container_name: pgadmin
+    depends_on:
+      - db
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@groweriq.ca
+      - PGADMIN_DEFAULT_PASSWORD=pgadmin
+    image: dpage/pgadmin4:latest
+    logging:
+      driver: none
+    networks:
+      - s2s-test
+    ports:
+      - "57251:80"
+
+networks:
+  s2s-test:
+    name: s2s-test
+

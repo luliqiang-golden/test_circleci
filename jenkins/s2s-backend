@@ -1,0 +1,156 @@
+properties([[$class: 'JiraProjectProperty'], parameters([[$class: 'ChoiceParameter', choiceType: 'PT_RADIO', filterLength: 1, filterable: false, name: 'Environment', randomName: 'choice-parameter-13587629937905724', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], oldScript: '', sandbox: false, script: ''], script: [classpath: [], oldScript: '', sandbox: false, script: 'return ["Development","Staging","UAT","Production"]']]], [$class: 'CascadeChoiceParameter', choiceType: 'PT_RADIO', filterLength: 1, filterable: false, name: 'Build', randomName: 'choice-parameter-13587629939363150', referencedParameters: 'Environment', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], oldScript: '', sandbox: false, script: ''], script: [classpath: [], oldScript: '', sandbox: false, script: '''import jenkins.model.*
+
+if(Environment=="Production"){
+   return ["All:selected","Several"]
+} else {
+   return
+}''']]], [$class: 'CascadeChoiceParameter', choiceType: 'PT_CHECKBOX', filterLength: 1, filterable: false, name: 'Clients', randomName: 'choice-parameter-13587629940872135', referencedParameters: 'Build', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], oldScript: '', sandbox: false, script: ''], script: [classpath: [], oldScript: '', sandbox: false, script: '''import jenkins.model.*
+instance = Jenkins.getInstance()
+globalNodeProperties = instance.getGlobalNodeProperties()
+myParam = \'\'
+
+if(Build=="Several"){
+    globalNodeProperties.each {
+        envVars = it.getEnvVars()
+        if (envVars.get(\'CLIENT_LIST\') != null) {
+            myParam = envVars.get(\'CLIENT_LIST\');
+        }
+    }
+
+    def myArray=[]
+    myParam.split(\',\').each { 
+        myArray << it
+    }
+
+    return myArray.each {println it}
+} else {
+    return
+}''']]]]), pipelineTriggers([bitBucketTrigger(credentialsId: 'bitbucket_webhook', triggers: [[$class: 'BitBucketPPRRepositoryTriggerFilter', actionFilter: [$class: 'BitBucketPPRRepositoryPushActionFilter', allowedBranches: '', triggerAlsoIfNothingChanged: true, triggerAlsoIfTagPush: false]]])])])
+pipeline {
+    environment{
+        FLASK_ENV='development'
+        DB_USERNAME='api_server'
+        DB_PASSWORD='seed2sale'
+    }
+    agent {
+        node {
+            label 'jenkins-agent1'
+        }
+    }
+    stages {
+        stage('Setting Up'){
+            steps {
+                bitbucketStatusNotify(buildState: 'INPROGRESS')
+                cleanWs()
+                script{
+                    if (env.Environment.toString().length() == 0) {
+                        error("Please, choose a environment to deploy.")
+                    }
+                    
+                    
+                    if(env.BITBUCKET_TARGET_BRANCH){
+                        env.Environment=env.BITBUCKET_TARGET_BRANCH
+                        branch = env.BITBUCKET_TARGET_BRANCH
+                    }else if (env.Environment!="Production"){
+                        branch = env.Environment.toLowerCase()
+                    } else {
+                        branch = 'main'
+                        if (env.Build=="Several" && env.Clients.toString().length() == 0){
+                            error("To the option 'Several', needs one client at least.")
+                        }
+                        if (env.Build=="All" && env.Clients.toString() == ""){
+                            env.Clients = env.CLIENT_LIST
+                        }
+                    }
+                    sh 'env'
+                }
+            }
+        }
+        stage('Clone') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: branch]], extensions: [], userRemoteConfigs: [[credentialsId: 'Bitbucket', url: 'https://bitbucket.org/wilcompute/seed-to-sale-api.git']]])
+            }
+        }
+        stage('Pytest'){
+            environment{
+                DB_HOST='localhost'
+                ALEMBIC_USERNAME='postgres'
+                DB_USERNAME='postgres'
+                DB='seed-to-sale-test'
+                DB_PASSWORD='seed2sale'
+            }
+            steps{
+                script{
+                    dir('db') {
+                        sh "docker container rm -f db | true"
+                        sh "docker build -t db ."
+                        sh "docker container run -d -p 5432:5432 --name db -e POSTGRES_DB=seed-to-sale-development -e POSTGRES_API_USER=api_server -e POSTGRES_PASSWORD=seed2sale db"
+                    }
+                    sleep 15
+                    sh "docker container logs db"
+                    sh "pipenv install --dev"
+                    sh "pipenv run setup-db-test"
+                    sh "pipenv run coverage run --source=python_scripts -m pytest --junitxml=testresult.xml"
+                    sh "docker container rm -f db"
+                }
+            }
+        }
+        // stage("SonarQube") {
+        //     steps {
+        //         script{
+        //             if(env.Environment=="Development"){
+        //                 sh "curl -o sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip"
+        //                 sh "unzip -o sonar-scanner.zip && rm -rf sonar-scanner || true && mv -f sonar-scanner-4.6.2.2472-linux sonar-scanner"
+        //                 withCredentials([string(credentialsId: 'sonar2', variable: 'token')]) {
+        //                     sh "sonar-scanner/bin/sonar-scanner -Dsonar.login=" + token
+        //                 }
+        //                 sh "rm -r sonar-scanner.zip sonar-scanner"
+                        
+        //                 sleep 10
+        //                 timeout(time: 10, unit: 'MINUTES') { 
+        //                     def qualityGate = waitForQualityGate() 
+        //                     if (qualityGate.status != 'OK') {
+        //                         error "Pipeline aborted due to quality gate coverage failure: ${qualityGate.status}"
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        stage('Deploy'){
+            environment {
+                versionApi = sh script: 'git describe --tags --abbrev=0', returnStdout: true
+                revision = sh script: 'git rev-parse --short HEAD', returnStdout: true
+            }
+            steps {
+                script {
+                    if(!env.BITBUCKET_TARGET_BRANCH){
+                        sh 'tar -czf src.tar.gz --exclude=src.tar.gz *'
+                        archiveArtifacts artifacts: 'src.tar.gz', followSymlinks: false
+                        
+                        if(env.Environment=="Production"){
+                            sh 'tar -czf src.tar.gz --exclude=src.tar.gz *'
+                            archiveArtifacts artifacts: 'src.tar.gz', followSymlinks: false
+                            def builds = [:]
+                            list_client = env.Clients.split(',')
+                            list_client.each{ client->
+                                builds["Client: " + client] = {build wait: true, job: 'build-back', parameters: [string(name: 'BUILD_VERSION', value: env.versionApi.trim().replace('.','-') + '-' + env.revision), string(name: 'CLIENT', value: client), string(name: 'ENVIRONMENT', value: env.Environment), string(name: 'ORIGIN_PROJECT', value: env.JOB_NAME)]}
+                            }
+                            parallel builds
+                            print(env.Environment)
+                            print(branch)
+                        }
+                        else{
+                            build wait: true, job: 'build-back', parameters: [string(name: 'BUILD_VERSION', value: env.versionApi.trim().replace('.','-') + '-' + env.revision), string(name: 'CLIENT', value: env.Environment), string(name: 'ENVIRONMENT', value: env.Environment), string(name: 'ORIGIN_PROJECT', value: env.JOB_NAME)]
+                            print(env.Environment)
+                            print(branch)
+                        }
+                    } else {
+                        echo 'Deployment is not needed for branch ${env.Environment}'
+                    }
+                    bitbucketStatusNotify(buildState: 'SUCCESSFUL')
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,551 @@
+variety name,product type,package type,amount,net weight received,account,weighed by,checked by,approved by,room,source lot number,purchase order,date,organization_id
+Granddaddy Purple,seeds,packaged,3520,2901,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,plants,packaged,4729,2580,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,g-wet,packaged,3071,5106,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,dry,packaged,9253,7511,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,cured,packaged,1067,3896,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,crude,packaged,6465,5877,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,distilled,packaged,5668,5339,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,terpene,packaged,2849,1949,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,sift,packaged,1633,1889,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,biomass,packaged,4917,1005,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,hash,packaged,5068,5002,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,seeds,unpackaged,1789,355,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,plants,unpackaged,7526,5209,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,g-wet,unpackaged,843,2256,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,dry,unpackaged,9299,2430,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,cured,unpackaged,573,9784,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,crude,unpackaged,1847,7920,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,distilled,unpackaged,3318,5574,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,terpene,unpackaged,8065,9127,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,sift,unpackaged,1929,1799,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,biomass,unpackaged,560,8199,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Granddaddy Purple,hash,unpackaged,5789,9419,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,seeds,packaged,9000,3896,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,plants,packaged,6461,3483,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,g-wet,packaged,725,206,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,dry,packaged,3115,3492,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,cured,packaged,3687,8961,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,crude,packaged,7618,7815,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,distilled,packaged,9361,1781,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,terpene,packaged,3984,5054,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,sift,packaged,4706,6219,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,biomass,packaged,639,5867,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,hash,packaged,8738,1685,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,seeds,unpackaged,2827,7095,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,plants,unpackaged,9552,868,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,g-wet,unpackaged,2941,3351,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,dry,unpackaged,2971,645,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,cured,unpackaged,5611,6173,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,crude,unpackaged,3518,9491,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,distilled,unpackaged,6164,2162,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,terpene,unpackaged,8600,9545,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,sift,unpackaged,6941,6043,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,biomass,unpackaged,7094,7037,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Punch,hash,unpackaged,7519,879,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,seeds,packaged,8928,5901,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,plants,packaged,3214,835,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,g-wet,packaged,4185,7960,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,dry,packaged,2975,6344,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,cured,packaged,7364,2939,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,crude,packaged,4352,390,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,distilled,packaged,8122,400,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,terpene,packaged,4733,3085,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,sift,packaged,9686,6047,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,biomass,packaged,1839,8809,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,hash,packaged,4219,4960,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,seeds,unpackaged,1282,2336,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,plants,unpackaged,880,1949,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,g-wet,unpackaged,5141,2844,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,dry,unpackaged,4569,5262,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,cured,unpackaged,912,5451,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,crude,unpackaged,1178,9091,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,distilled,unpackaged,1931,2861,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,terpene,unpackaged,7013,530,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,sift,unpackaged,130,5140,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,biomass,unpackaged,8317,4164,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+G13,hash,unpackaged,5913,9476,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,seeds,packaged,8568,547,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,plants,packaged,7738,6124,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,g-wet,packaged,5528,7753,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,dry,packaged,4391,2078,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,cured,packaged,2272,2922,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,crude,packaged,9625,9667,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,distilled,packaged,2843,6703,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,terpene,packaged,9790,8352,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,sift,packaged,4877,3103,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,biomass,packaged,3487,6584,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,hash,packaged,7274,5083,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,seeds,unpackaged,1597,6730,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,plants,unpackaged,437,9203,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,g-wet,unpackaged,5564,8340,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,dry,unpackaged,4894,4259,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,cured,unpackaged,5531,8565,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,crude,unpackaged,7388,9062,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,distilled,unpackaged,5691,4360,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,terpene,unpackaged,387,9410,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,sift,unpackaged,8001,4929,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,biomass,unpackaged,4834,7204,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Bubba Kush,hash,unpackaged,8398,2503,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,seeds,packaged,1609,1777,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,plants,packaged,4738,3341,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,g-wet,packaged,7595,6390,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,dry,packaged,2365,4100,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,cured,packaged,1085,7463,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,crude,packaged,2752,5141,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,distilled,packaged,8008,8456,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,terpene,packaged,167,267,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,sift,packaged,3796,3511,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,biomass,packaged,6052,5360,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,hash,packaged,3031,7372,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,seeds,unpackaged,2663,869,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,plants,unpackaged,7224,4001,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,g-wet,unpackaged,2975,9290,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,dry,unpackaged,9057,5424,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,cured,unpackaged,898,6510,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,crude,unpackaged,7346,5752,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,distilled,unpackaged,7085,8397,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,terpene,unpackaged,4933,558,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,sift,unpackaged,5411,2956,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,biomass,unpackaged,8037,5089,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Kush,hash,unpackaged,8076,1224,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,seeds,packaged,2425,8221,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,plants,packaged,1259,4763,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,g-wet,packaged,8341,9325,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,dry,packaged,3023,4310,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,cured,packaged,3829,7450,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,crude,packaged,2610,3657,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,distilled,packaged,7931,1376,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,terpene,packaged,3721,8052,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,sift,packaged,6291,6144,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,biomass,packaged,7354,7746,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,hash,packaged,1238,892,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,seeds,unpackaged,9208,7467,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,plants,unpackaged,406,3385,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,g-wet,unpackaged,8121,4406,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,dry,unpackaged,9596,2761,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,cured,unpackaged,8943,6205,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,crude,unpackaged,8568,6299,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,distilled,unpackaged,1902,4307,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,terpene,unpackaged,3304,3103,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,sift,unpackaged,2681,4688,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,biomass,unpackaged,2113,1857,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+LA Confidential,hash,unpackaged,2151,7457,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,seeds,packaged,3157,5514,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,plants,packaged,4776,151,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,g-wet,packaged,1607,1486,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,dry,packaged,4675,5250,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,cured,packaged,3264,7741,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,crude,packaged,436,5075,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,distilled,packaged,9267,1701,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,terpene,packaged,9829,3613,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,sift,packaged,9270,2888,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,biomass,packaged,3996,1604,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,hash,packaged,5134,9258,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,seeds,unpackaged,7059,5389,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,plants,unpackaged,6169,1343,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,g-wet,unpackaged,3941,3081,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,dry,unpackaged,9756,9257,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,cured,unpackaged,7539,7420,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,crude,unpackaged,1407,8737,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,distilled,unpackaged,3888,1597,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,terpene,unpackaged,1641,8888,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,sift,unpackaged,6305,7692,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,biomass,unpackaged,5666,1063,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+9 Pound Hammer,hash,unpackaged,4259,6637,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,seeds,packaged,8839,1265,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,plants,packaged,5022,7333,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,g-wet,packaged,1265,197,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,dry,packaged,7794,5105,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,cured,packaged,8412,8831,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,crude,packaged,9612,6481,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,distilled,packaged,3473,8645,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,terpene,packaged,2536,7717,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,sift,packaged,3869,8681,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,biomass,packaged,1566,3097,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,hash,packaged,8655,1465,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,seeds,unpackaged,6850,5328,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,plants,unpackaged,2282,4222,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,g-wet,unpackaged,4536,4744,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,dry,unpackaged,9279,6081,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,cured,unpackaged,8356,6496,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,crude,unpackaged,3179,7026,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,distilled,unpackaged,2545,3377,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,terpene,unpackaged,6823,2972,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,sift,unpackaged,6331,3710,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,biomass,unpackaged,5898,9587,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Purple Urkle,hash,unpackaged,6549,5832,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,seeds,packaged,1832,1477,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,plants,packaged,2799,870,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,g-wet,packaged,1425,2185,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,dry,packaged,2181,2102,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,cured,packaged,2960,8308,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,crude,packaged,3129,446,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,distilled,packaged,2246,6353,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,terpene,packaged,8644,5517,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,sift,packaged,2961,7038,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,biomass,packaged,7048,1267,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,hash,packaged,3491,7388,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,seeds,unpackaged,4122,958,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,plants,unpackaged,2203,5810,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,g-wet,unpackaged,3910,2039,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,dry,unpackaged,6682,2288,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,cured,unpackaged,1438,6338,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,crude,unpackaged,1266,482,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,distilled,unpackaged,4811,862,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,terpene,unpackaged,4895,4717,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,sift,unpackaged,8247,591,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,biomass,unpackaged,4266,5159,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Blackberry Kush,hash,unpackaged,7407,5456,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,seeds,packaged,4983,4093,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,plants,packaged,987,8060,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,g-wet,packaged,2012,5745,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,dry,packaged,8342,9901,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,cured,packaged,7320,6262,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,crude,packaged,1264,8900,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,distilled,packaged,1884,8050,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,terpene,packaged,1171,8274,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,sift,packaged,895,277,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,biomass,packaged,6764,5003,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,hash,packaged,6380,2713,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,seeds,unpackaged,2238,3610,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,plants,unpackaged,8709,2338,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,g-wet,unpackaged,9974,7475,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,dry,unpackaged,6108,7579,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,cured,unpackaged,7523,2783,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,crude,unpackaged,5508,7426,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,distilled,unpackaged,7203,1141,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,terpene,unpackaged,3934,2106,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,sift,unpackaged,8397,7758,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,biomass,unpackaged,2675,2492,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Hindu Kush,hash,unpackaged,8103,3225,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,seeds,packaged,8850,9116,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,plants,packaged,9351,9896,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,g-wet,packaged,8596,9863,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,dry,packaged,2060,9048,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,cured,packaged,279,3521,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,crude,packaged,2363,9144,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,distilled,packaged,5004,8007,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,terpene,packaged,586,2048,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,sift,packaged,6581,2441,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,biomass,packaged,3642,4426,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,hash,packaged,7059,9424,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,seeds,unpackaged,4459,5154,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,plants,unpackaged,8439,5954,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,g-wet,unpackaged,2682,430,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,dry,unpackaged,2366,2701,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,cured,unpackaged,9813,4724,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,crude,unpackaged,9310,6639,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,distilled,unpackaged,5926,2456,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,terpene,unpackaged,1752,2692,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,sift,unpackaged,6535,7304,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,biomass,unpackaged,6300,3136,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Pink Kush,hash,unpackaged,8295,2294,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,seeds,packaged,2869,1831,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,plants,packaged,4899,5030,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,g-wet,packaged,4559,666,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,dry,packaged,1239,3951,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,cured,packaged,9896,737,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,crude,packaged,4958,8669,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,distilled,packaged,3305,6338,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,terpene,packaged,7975,4065,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,sift,packaged,4568,8812,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,biomass,packaged,873,509,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,hash,packaged,1527,6674,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,seeds,unpackaged,3804,1516,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,plants,unpackaged,1024,7249,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,g-wet,unpackaged,8601,3506,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,dry,unpackaged,9311,3407,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,cured,unpackaged,5929,1966,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,crude,unpackaged,6170,7785,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,distilled,unpackaged,3175,4172,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,terpene,unpackaged,900,3895,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,sift,unpackaged,2719,6645,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,biomass,unpackaged,8254,2133,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Afgooey,hash,unpackaged,3235,3232,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,seeds,packaged,644,7488,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,plants,packaged,2850,5740,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,g-wet,packaged,9071,9242,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,dry,packaged,4692,7513,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,cured,packaged,9350,6890,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,crude,packaged,8955,8115,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,distilled,packaged,774,7460,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,terpene,packaged,2396,8045,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,sift,packaged,8920,8812,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,biomass,packaged,2105,1148,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,hash,packaged,6592,466,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,seeds,unpackaged,3518,5580,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,plants,unpackaged,4778,6156,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,g-wet,unpackaged,7657,3615,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,dry,unpackaged,4657,5765,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,cured,unpackaged,7865,5067,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,crude,unpackaged,7068,9931,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,distilled,unpackaged,1857,3347,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,terpene,unpackaged,6369,7937,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,sift,unpackaged,9676,5000,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,biomass,unpackaged,7933,4768,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Romulan,hash,unpackaged,5660,2710,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,seeds,packaged,1325,2097,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,plants,packaged,2826,9168,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,g-wet,packaged,470,7430,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,dry,packaged,8349,3247,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,cured,packaged,9035,5000,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,crude,packaged,6322,7088,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,distilled,packaged,9327,6998,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,terpene,packaged,5583,9873,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,sift,packaged,6246,3167,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,biomass,packaged,8406,8667,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,hash,packaged,2438,9516,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,seeds,unpackaged,3603,5942,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,plants,unpackaged,9089,7465,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,g-wet,unpackaged,3680,4463,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,dry,unpackaged,8471,4354,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,cured,unpackaged,6468,8809,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,crude,unpackaged,6273,7442,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,distilled,unpackaged,8269,1887,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,terpene,unpackaged,8778,3723,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,sift,unpackaged,6349,1675,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,biomass,unpackaged,5608,7777,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+OG Kush,hash,unpackaged,3854,2252,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,seeds,packaged,1932,9035,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,plants,packaged,5962,7744,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,g-wet,packaged,946,9973,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,dry,packaged,6591,7192,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,cured,packaged,4000,7610,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,crude,packaged,3344,4155,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,distilled,packaged,3533,1683,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,terpene,packaged,1672,608,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,sift,packaged,2026,9001,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,biomass,packaged,1502,2419,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,hash,packaged,221,465,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,seeds,unpackaged,1511,1941,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,plants,unpackaged,829,6627,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,g-wet,unpackaged,777,2869,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,dry,unpackaged,9266,5513,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,cured,unpackaged,6863,5425,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,crude,unpackaged,8411,4277,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,distilled,unpackaged,9506,3286,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,terpene,unpackaged,7456,7868,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,sift,unpackaged,6207,1540,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,biomass,unpackaged,4886,6124,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Ice Cream Cake,hash,unpackaged,7034,8162,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,seeds,packaged,5310,4866,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,plants,packaged,9344,7263,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,g-wet,packaged,5512,9493,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,dry,packaged,2722,7039,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,cured,packaged,887,1462,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,crude,packaged,5696,6128,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,distilled,packaged,4405,2365,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,terpene,packaged,7483,2873,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,sift,packaged,5270,6759,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,biomass,packaged,9077,107,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,hash,packaged,1005,676,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,seeds,unpackaged,6933,689,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,plants,unpackaged,8563,4860,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,g-wet,unpackaged,3964,2904,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,dry,unpackaged,8250,7646,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,cured,unpackaged,5569,9560,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,crude,unpackaged,8230,1624,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,distilled,unpackaged,4931,6215,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,terpene,unpackaged,5089,3937,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,sift,unpackaged,664,7340,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,biomass,unpackaged,2205,6922,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Apple Fritter,hash,unpackaged,1382,2078,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,seeds,packaged,5228,8227,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,plants,packaged,915,789,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,g-wet,packaged,7728,7580,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,dry,packaged,8053,9355,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,cured,packaged,7270,4221,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,crude,packaged,8546,3140,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,distilled,packaged,7758,2793,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,terpene,packaged,8598,9324,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,sift,packaged,9231,1190,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,biomass,packaged,7950,8281,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,hash,packaged,2277,7448,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,seeds,unpackaged,6156,9612,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,plants,unpackaged,135,2008,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,g-wet,unpackaged,186,5614,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,dry,unpackaged,2651,2059,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,cured,unpackaged,9715,2472,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,crude,unpackaged,495,4353,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,distilled,unpackaged,4048,4210,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,terpene,unpackaged,3570,5549,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,sift,unpackaged,6485,2731,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,biomass,unpackaged,8467,8494,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Peanut Butter Breath,hash,unpackaged,7672,863,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,seeds,packaged,7606,4523,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,plants,packaged,6797,4709,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,g-wet,packaged,5573,8096,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,dry,packaged,5956,4906,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,cured,packaged,4744,3217,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,crude,packaged,7258,2208,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,distilled,packaged,308,3268,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,terpene,packaged,5767,9118,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,sift,packaged,8537,7597,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,biomass,packaged,3239,4935,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,hash,packaged,7310,9978,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,seeds,unpackaged,9117,7979,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,plants,unpackaged,6595,5265,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,g-wet,unpackaged,4125,4393,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,dry,unpackaged,5567,6606,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,cured,unpackaged,2751,6470,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,crude,unpackaged,3594,3184,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,distilled,unpackaged,1260,9373,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,terpene,unpackaged,8766,3697,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,sift,unpackaged,1800,5927,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,biomass,unpackaged,7874,1878,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Sour Diesel,hash,unpackaged,1743,3464,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,seeds,packaged,9169,5561,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,plants,packaged,9047,3027,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,g-wet,packaged,3131,3122,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,dry,packaged,6316,2496,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,cured,packaged,5699,5316,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,crude,packaged,5915,5452,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,distilled,packaged,7372,7603,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,terpene,packaged,4685,120,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,sift,packaged,1818,3892,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,biomass,packaged,1255,4232,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,hash,packaged,6964,5192,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,seeds,unpackaged,1255,8805,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,plants,unpackaged,4345,6393,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,g-wet,unpackaged,101,5063,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,dry,unpackaged,5922,9376,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,cured,unpackaged,1372,9131,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,crude,unpackaged,9325,661,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,distilled,unpackaged,3109,7323,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,terpene,unpackaged,2991,1427,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,sift,unpackaged,6134,7070,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,biomass,unpackaged,8026,987,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Maui Wowie,hash,unpackaged,3854,4801,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,seeds,packaged,5262,4036,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,plants,packaged,1136,1015,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,g-wet,packaged,5314,2304,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,dry,packaged,9444,4644,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,cured,packaged,5446,6553,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,crude,packaged,844,6951,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,distilled,packaged,8246,6792,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,terpene,packaged,7060,8572,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,sift,packaged,3918,8366,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,biomass,packaged,9407,1074,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,hash,packaged,1043,7730,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,seeds,unpackaged,2408,3568,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,plants,unpackaged,2029,5699,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,g-wet,unpackaged,9012,6583,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,dry,unpackaged,5863,7253,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,cured,unpackaged,8797,1559,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,crude,unpackaged,2948,6986,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,distilled,unpackaged,2316,4000,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,terpene,unpackaged,5333,5738,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,sift,unpackaged,3390,1379,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,biomass,unpackaged,7392,443,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Durban Poison,hash,unpackaged,316,4595,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,seeds,packaged,2693,7371,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,plants,packaged,2266,979,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,g-wet,packaged,8374,8304,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,dry,packaged,5661,1327,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,cured,packaged,646,2619,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,crude,packaged,8091,3049,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,distilled,packaged,1434,6158,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,terpene,packaged,9452,1749,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,sift,packaged,3887,7826,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,biomass,packaged,2550,3128,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,hash,packaged,7683,5692,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,seeds,unpackaged,3579,9029,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,plants,unpackaged,9702,3079,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,g-wet,unpackaged,9782,9764,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,dry,unpackaged,1673,5533,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,cured,unpackaged,9733,7535,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,crude,unpackaged,7352,9735,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,distilled,unpackaged,182,3074,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,terpene,unpackaged,2231,4795,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,sift,unpackaged,5419,5302,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,biomass,unpackaged,8848,8737,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Acapulco Gold,hash,unpackaged,216,4757,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,seeds,packaged,3468,6987,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,plants,packaged,3594,1728,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,g-wet,packaged,7597,2352,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,dry,packaged,2691,3693,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,cured,packaged,1613,1359,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,crude,packaged,5027,4529,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,distilled,packaged,5508,3150,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,terpene,packaged,3730,9676,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,sift,packaged,3866,4032,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,biomass,packaged,2143,2278,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,hash,packaged,4715,3702,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,seeds,unpackaged,5564,2699,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,plants,unpackaged,5320,4990,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,g-wet,unpackaged,1726,8652,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,dry,unpackaged,7511,5113,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,cured,unpackaged,1348,6774,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,crude,unpackaged,6633,8375,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,distilled,unpackaged,7056,760,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,terpene,unpackaged,8189,7836,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,sift,unpackaged,3072,9720,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,biomass,unpackaged,1773,9594,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Green Crack,hash,unpackaged,6751,8631,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,seeds,packaged,1564,8898,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,plants,packaged,4462,8163,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,g-wet,packaged,435,4847,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,dry,packaged,7148,5577,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,cured,packaged,8258,1031,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,crude,packaged,8483,8079,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,distilled,packaged,5255,268,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,terpene,packaged,7381,3270,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,sift,packaged,422,3354,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,biomass,packaged,9854,681,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,hash,packaged,9940,1855,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,seeds,unpackaged,2481,3976,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,plants,unpackaged,4283,3514,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,g-wet,unpackaged,503,7843,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,dry,unpackaged,2652,9596,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,cured,unpackaged,9671,2133,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,crude,unpackaged,2389,8376,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,distilled,unpackaged,4604,6681,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,terpene,unpackaged,3549,4380,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,sift,unpackaged,6911,4886,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,biomass,unpackaged,999,5386,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Lemon Haze,hash,unpackaged,4336,4904,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,seeds,packaged,6258,8832,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,plants,packaged,1447,6478,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,g-wet,packaged,8960,3288,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,dry,packaged,8944,688,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,cured,packaged,4787,7465,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,crude,packaged,5029,2056,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,distilled,packaged,9468,1111,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,terpene,packaged,4698,9820,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,sift,packaged,1183,1439,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,biomass,packaged,1803,4134,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,hash,packaged,7893,3305,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,seeds,unpackaged,182,7880,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,plants,unpackaged,6677,5621,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,g-wet,unpackaged,3178,4398,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,dry,unpackaged,9589,5909,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,cured,unpackaged,7293,4392,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,crude,unpackaged,6100,7487,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,distilled,unpackaged,4144,9976,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,terpene,unpackaged,8104,860,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,sift,unpackaged,1319,7619,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,biomass,unpackaged,6379,4671,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+Super Silver Haze,hash,unpackaged,7259,8622,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,seeds,packaged,4187,6478,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,plants,packaged,349,6869,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,g-wet,packaged,4496,8489,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,dry,packaged,4613,4875,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,cured,packaged,4835,5144,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,crude,packaged,9450,8750,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,distilled,packaged,569,2502,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,terpene,packaged,4813,5673,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,sift,packaged,9095,9919,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,biomass,packaged,3406,9241,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,hash,packaged,2548,4142,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,seeds,unpackaged,3110,4240,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,plants,unpackaged,9937,5139,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,g-wet,unpackaged,9998,3168,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,dry,unpackaged,5399,2636,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,cured,unpackaged,8045,284,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,crude,unpackaged,2140,9055,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,distilled,unpackaged,5065,7359,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,terpene,unpackaged,3038,1123,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,sift,unpackaged,3386,2061,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,biomass,unpackaged,639,210,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4
+White Fire OG,hash,unpackaged,9403,1412,Supplier,maintenance@groweriq.ca,maintenance@groweriq.ca,maintenance@groweriq.ca,Received Inventory Room,0,0,14-04-2022,4

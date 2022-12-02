@@ -1,0 +1,6 @@
+[{
+  "origin": ["*"],
+  "responseHeader": ["*"],
+  "method": ["*"],
+  "maxAgeSeconds": 3600
+}]

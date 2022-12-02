@@ -1,0 +1,1157 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: python:3.7
+
+definitions:
+  services:
+    postgres:
+      image: postgres:9.6
+      environment:
+        POSTGRES_DB: seed-to-sale-test
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: password
+
+pipelines:
+  custom: # Pipelines that are triggered manually
+    cloud:
+      - step:
+          services:
+            - postgres
+          name: dev:test
+          caches:
+            - pip
+          script:
+            - pip install pipenv
+            - export FLASK_ENV=development
+            - pipenv install --dev
+            - pipenv run coverage run --source=python_scripts -m pytest --junitxml=testresult.xml
+            - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN pipenv run coveralls
+      - step:
+          name: dev:deploy
+          deployment: test
+          script:
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-354.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_DEV_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - chmod +x ~/cloud_sql_proxy
+            # Run Google Cloud proxy in background
+            - ~/cloud_sql_proxy -instances=seed-to-sale-dev:northamerica-northeast1:seed-to-sale-dev-postgres=tcp:5432 &
+            # Run alembic on cloud db
+            - pipenv install --system
+            - export GC_PROJ="groweriq-prod-mtl"
+            - export DB_HOST="127.0.0.1"
+            - export DB_HOST_APP_ENGINE="127.0.0.1"
+            - pipenv run alembic upgrade head
+            # Linking to the Google Cloud project
+            - cd python_scripts
+            - echo $GCLOUD_DEV_APP_CREDENTIALS | base64 --decode --ignore-garbage > google-cloud-storage-key.json
+            - gcloud app deploy app-dev.yaml --project $GCLOUD_DEV_PROJECT --version $RELEASE --quiet 
+  pull-requests:
+    "**": # default for any branch
+      - step:
+          services:
+            - postgres
+          name: pr:test
+          caches:
+            - pip
+          script:
+            - pip install pipenv
+            - export FLASK_ENV=development
+            - pipenv install --system
+            - pipenv run coverage run --source=python_scripts -m pytest --junitxml=testresult.xml
+            - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN pipenv run coveralls
+            # Check that there is only one alembic head
+            - pipenv run alembic heads | wc -l | grep -q 1
+            
+  branches:
+    release/*:
+      - step:
+          services:
+            - postgres
+          name: 'install+test'
+          caches:
+            - pip
+          script:
+            - pip install pipenv
+            - export FLASK_ENV=development
+            - pipenv install --dev
+            - pipenv run pytest --junitxml=testresult.xml
+    development:
+      - step:
+          services:
+            - postgres
+          name: test
+          caches:
+            - pip
+          script:
+            - pip install pipenv
+            - export FLASK_ENV=development
+            - pipenv install --dev
+            - pipenv run coverage run --source=python_scripts -m pytest --junitxml=testresult.xml
+            - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN pipenv run coveralls
+      - step:
+          name: deploy
+          deployment: test
+          script:
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-354.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_DEV_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - chmod +x ~/cloud_sql_proxy
+            # Run Google Cloud proxy in background
+            - ~/cloud_sql_proxy -instances=seed-to-sale-dev:northamerica-northeast1:seed-to-sale-dev-postgres=tcp:5432 &
+            # Run alembic on cloud db
+            - pipenv install --system
+            - export GC_PROJ="seed-to-sale-dev"
+            - export GOOGLE_CLOUD_PROJECT="seed-to-sale-dev"
+            - export DB_HOST="127.0.0.1"
+            - export DB_HOST_APP_ENGINE="127.0.0.1"
+            - export DB_PASSWORD="A7tgtACp8EHwXgQ6UUz8VU8XTV"
+            - pipenv run alembic upgrade head
+            # Linking to the Google Cloud project
+            - cd python_scripts
+            - echo $GCLOUD_DEV_APP_CREDENTIALS | base64 --decode --ignore-garbage > google-cloud-storage-key.json
+            - gcloud app deploy app-dev.yaml --project $GCLOUD_DEV_PROJECT --version $DEV_VERSION --quiet --no-promote
+    staging:
+      - step:
+          services:
+            - postgres
+          name: test
+          caches:
+            - pip
+          script:
+            - pip install pipenv
+            - export FLASK_ENV=development
+            - pipenv install --system
+            - pipenv run coverage run --source=python_scripts -m pytest --junitxml=testresult.xml
+            - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN pipenv run coveralls
+      - step:
+          name: deploy
+          deployment: production
+          script:
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-354.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - chmod +x ~/cloud_sql_proxy
+            # Run Google Cloud proxy in background for all clients
+            - ~/cloud_sql_proxy -instances=groweriq-prod-mtl:northamerica-northeast1:groweriq-pg-prod-mtl=tcp:5432 &
+            - pipenv install --system
+            - export GC_PROJ="groweriq-prod-mtl"
+            - export DB_HOST="127.0.0.1"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - export GOOGLE_APPLICATION_CREDENTIALS="google-cloud-storage-key.json"
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy app-prod.yaml --project $GCLOUD_PROD_PROJECT --version $PROD_VERSION
+    hot-fix:
+      - step:
+          services:
+            - postgres
+          name: test
+          caches:
+            - pip
+          script:
+            - pip install pipenv
+            - export FLASK_ENV=development
+            - pipenv install --system
+            - pipenv run coverage run --source=python_scripts -m pytest --junitxml=testresult.xml
+            - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN pipenv run coveralls
+      - step:
+          name: deploy
+          deployment: production
+          script:
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-354.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - chmod +x ~/cloud_sql_proxy
+            # Run Google Cloud proxy in background for all clients
+            - ~/cloud_sql_proxy -instances=seed-to-sale-hotfix:northamerica-northeast1:seed-to-sale-hotfix-sql=tcp:5432 &
+            - pipenv install --system
+            - export GOOGLE_CLOUD_PROJECT="seed-to-sale-hotfix"
+            - export DB_HOST="127.0.0.1"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - export GOOGLE_APPLICATION_CREDENTIALS="google-cloud-storage-key.json"
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy hotfix-api-prod.yaml --project seed-to-sale-hotfix --version $PROD_VERSION
+    main:
+      - step:
+          services:
+            - postgres
+          name: test
+          caches:
+            - pip
+          script:
+            - pip install pipenv
+            - export FLASK_ENV=development
+            - pipenv install --system
+            - pipenv run coverage run --source=python_scripts -m pytest --junitxml=testresult.xml
+            - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN pipenv run coveralls
+      - step:
+          name: deploy:indigro
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            # # # ---------- indigro ----------
+            - ~/cloud_sql_proxy -instances=indigro-groweriq:northamerica-northeast1:indigro-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="indigro-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy indigro-api-uat.yaml --project $GCLOUD_INDIGRO_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:cannasvg
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            # # # ---------- cannasvg ----------
+            - ~/cloud_sql_proxy -instances=cannasvg-groweriq:northamerica-northeast1:cannasvg-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="cannasvg-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy cannasvg-api-uat.yaml --project $GCLOUD_CANNASVG_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:christina-lake
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            # # # ---------- christina lake ----------
+            - ~/cloud_sql_proxy -instances=clc-groweriq:northamerica-northeast1:clc-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="clc-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy clc-api-uat.yaml --project $GCLOUD_CLC_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:cannabud
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            # ---------- Cannabud ----------
+            - ~/cloud_sql_proxy -instances=cannabud-groweriq:northamerica-northeast1:cannabud-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="cannabud-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy cannabud-api-uat.yaml --project $GCLOUD_CANNABUD_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:supernova
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            # ---------- Supernova ----------
+            - ~/cloud_sql_proxy -instances=supernova-groweriq:northamerica-northeast1:supernova-sql=tcp:5432 &
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - export GOOGLE_CLOUD_PROJECT="supernova-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy supernova-api-uat.yaml --project $GCLOUD_SUPERNOVA_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:abwh
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            # # ---------- abwh ----------
+            - ~/cloud_sql_proxy -instances=abwh-groweriq:northamerica-northeast1:abwh-sql=tcp:5432 &
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - export GOOGLE_CLOUD_PROJECT="abwh-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy abwh-api-uat.yaml --project $GCLOUD_ABWH_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:309lab
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            # ---------- 309 lab ----------
+            - ~/cloud_sql_proxy -instances=c309lab-groweriq:northamerica-northeast1:c309lab-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="c309lab-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy c309lab-api-uat.yaml --project $GCLOUD_C309LAB_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:distinkt
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            # ---------- distinkt ----------
+            - ~/cloud_sql_proxy -instances=distinkt-groweriq:northamerica-northeast1:distinkt-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="distinkt-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy distinkt-api-uat.yaml --project $GCLOUD_DISTINKT_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:rascalseed
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            # ---------- Rascal Seed ----------
+            - ~/cloud_sql_proxy -instances=rascalseed-groweriq:southamerica-east1:rascalseed-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="rascalseed-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy rascalseed-api-uat.yaml --project $GCLOUD_RASCALSEED_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:acreage
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Acreage Farms ----------
+            - ~/cloud_sql_proxy -instances=acreage-groweriq:northamerica-northeast1:acreage-sql=tcp:5432 &
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - export GOOGLE_CLOUD_PROJECT="acreage-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy acreage-api-uat.yaml --project $GCLOUD_ACREAGE_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:dyma
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Dyma ----------
+            - ~/cloud_sql_proxy -instances=dyma-groweriq:northamerica-northeast1:dyma-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="dyma-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy dyma-api-uat.yaml --project $GCLOUD_DYMA_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:holigen
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Holigen ----------
+            - ~/cloud_sql_proxy -instances=holigen-groweriq:europe-west3:holigen-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="holigen-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy holigen-api-uat.yaml --project $GCLOUD_HOLIGEN_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:terranueva
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Terranueva ----------
+            - ~/cloud_sql_proxy -instances=terranueva-groweriq:northamerica-northeast1:terranueva1-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="terranueva-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy terranueva-api-uat.yaml --project $GCLOUD_TERRANUEVA_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:symtomax
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            # # ---------- Symtomax ----------
+            - ~/cloud_sql_proxy -instances=symtomax-groweriq:europe-west2:symtomax-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="symtomax-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy symtomax-api-uat.yaml --project $GCLOUD_SYMTOMAX_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:stenocare
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Stenocare ----------
+            - ~/cloud_sql_proxy -instances=stenocare-groweriq:europe-west3:stenocare-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="stenocare-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy stenocare-api-uat.yaml --project $GCLOUD_STENOCARE_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:medicalplants
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- medicalplants ----------
+            - ~/cloud_sql_proxy -instances=medicalplants-groweriq:europe-west3:medicalplants-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="medicalplants-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy medicalplants-api-uat.yaml --project $GCLOUD_MEDICALPLANTS_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:safricanna
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- SafriCanna ----------
+            - ~/cloud_sql_proxy -instances=safricanna-groweriq:southamerica-east1:safricanna-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="safricanna-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy safricanna-api-uat.yaml --project $GCLOUD_SAFRICANNA_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:torrcann
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- TorrCann ----------
+            - ~/cloud_sql_proxy -instances=torrcann-groweriq:northamerica-northeast1:torrcann-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="torrcann-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy torrcann-api-uat.yaml --project $GCLOUD_TORRCANN_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:arcticpharm
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- ArcticPharm ----------
+            - ~/cloud_sql_proxy -instances=arcticpharm-groweriq:northamerica-northeast1:arcticpharm-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="arcticpharm-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy arcticpharm-api-uat.yaml --project $GCLOUD_ARCTICPHARM_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:biofabrica
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Biofabrica ----------
+            - ~/cloud_sql_proxy -instances=biofabrica-groweriq:southamerica-east1:biofabrica-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="biofabrica-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy biofabrica-api-uat.yaml --project $GCLOUD_BIOFABRICA_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:belvedere
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Belvedere ----------
+            - ~/cloud_sql_proxy -instances=belvedere-groweriq:europe-west2:belvedere-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="belvedere-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy belvedere-api-uat.yaml --project $GCLOUD_BELVEDERE_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:ostara
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Ostara ----------
+            - ~/cloud_sql_proxy -instances=ostara-groweriq:northamerica-northeast1:ostara-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="ostara-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy ostara-api-uat.yaml --project $GCLOUD_OSTARA_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:kinhana
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Kinhana -------------
+            - ~/cloud_sql_proxy -instances=kinhana-groweriq:northamerica-northeast1:kinhana-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="kinhana-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy kinhana-api-uat.yaml --project $GCLOUD_KINHANA_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:betralif
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Betralif -------------
+            - ~/cloud_sql_proxy -instances=betralif-groweriq:northamerica-northeast1:betralif-sql=tcp:5432 &
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - export GOOGLE_CLOUD_PROJECT="betralif-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy betralif-api-uat.yaml --project $GCLOUD_BETRALIF_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:uat
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+             #---------- Centralized UAT for all clients-------------
+            - ~/cloud_sql_proxy -instances=uat-groweriq:northamerica-northeast1:uat-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="uat-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy uat-api-prod.yaml --project $GCLOUD_UAT_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:plantations
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            # # ---------- Plantations ----------
+            - ~/cloud_sql_proxy -instances=plantations-groweriq:northamerica-northeast1:plantations-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="plantations-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy plantations-api-uat.yaml --project $GCLOUD_PLANTATIONS_PROD_PROJECT --version $RELEASE --quiet || true
+      - step:
+          name: deploy:lot420
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Lot420 ----------
+            - ~/cloud_sql_proxy -instances=lot420-groweriq:northamerica-northeast1:lot420-sql=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="lot420-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy lot420-api-uat.yaml --project $GCLOUD_LOT420_PROD_PROJECT --version $RELEASE --quiet || true
+      
+  custom:
+    production:
+      - variables:
+        - name: client
+        - name: cloud_sql_proxy
+      - step:
+          deployment: production
+          name: deploy:production
+          size: 2x
+          caches:
+            - node
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Deploy ----------
+            - echo "Deploying $client"
+            - ~/cloud_sql_proxy -instances="$cloud_sql_proxy"=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="$client-groweriq"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy "$client"-api-prod.yaml --project "$client"-groweriq --version $RELEASE --promote --quiet
+
+    uat:
+      - variables:
+        - name: client
+        - name: cloud_sql_proxy
+      - step:
+          deployment: production
+          name: deploy:production
+          size: 2x
+          caches:
+            - node
+          script:
+            - export DB_HOST="127.0.0.1"
+            - pip install pipenv
+            # Downloading the Google Cloud SDK
+            - curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-319.0.0-linux-x86_64.tar.gz
+            - tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/
+            - /tmp/google-cloud-sdk/install.sh -q
+            - source /tmp/google-cloud-sdk/path.bash.inc
+            # Authenticating with the service account key file
+            - echo $GCLOUD_PROD_DEPLOY_KEYFILE | base64 --decode --ignore-garbage > ./gcloud-api-key.json
+            - export GOOGLE_APPLICATION_CREDENTIALS="gcloud-api-key.json"
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            # clear cache
+            - pipenv lock --clear
+            # Generate requirements from Pipfile for Google Cloud
+            - pipenv lock --requirements > python_scripts/requirements.txt
+            # Install Google Cloud Proxy
+            - wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+            - pipenv install --system
+            - chmod +x ~/cloud_sql_proxy
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            #---------- Deploy ----------
+            - echo "Deploying $client"
+            - ~/cloud_sql_proxy -instances="$cloud_sql_proxy"=tcp:5432 &
+            - export GOOGLE_CLOUD_PROJECT="$client-groweriq"
+            - export DB="uat"
+            - pipenv run alembic upgrade head
+            - cd python_scripts
+            - echo $GCLOUD_PROD_APP_CREDENTIALS | base64 --decode --ignore-garbage > ./google-cloud-storage-key.json
+            - gcloud app deploy "$client"-api-uat.yaml --project "$client"-groweriq --version $RELEASE --promote --quiet

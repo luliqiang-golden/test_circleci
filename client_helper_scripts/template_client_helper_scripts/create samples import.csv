@@ -1,0 +1,110 @@
+from_inventory_id,sampled_by,approved_by,variety,product_type,quantity,date,organization_id
+23091,Taija Stolk,Youngjin Oh,Glueberry,dry,10.05,31-03-2022,1
+23092,Taija Stolk,Youngjin Oh,Black Tuna,dry,15,31-03-2022,1
+23093,Taija Stolk,Youngjin Oh,Green Gelato,dry,15,31-03-2022,1
+23094,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.02,31-03-2022,1
+23095,Taija Stolk,Youngjin Oh,Green Gelato,dry,15.06,31-03-2022,1
+23096,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.08,31-03-2022,1
+23097,Taija Stolk,Youngjin Oh,Green Gelato,dry,15.09,31-03-2022,1
+23098,Taija Stolk,Youngjin Oh,Green Gelato,dry,15.1,31-03-2022,1
+23099,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.11,31-03-2022,1
+23100,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.12,31-03-2022,1
+23101,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.12,31-03-2022,1
+23102,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.16,31-03-2022,1
+23103,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.16,31-03-2022,1
+23104,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.19,31-03-2022,1
+23105,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.21,31-03-2022,1
+23106,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.23,31-03-2022,1
+23107,Taija Stolk,Youngjin Oh,Green Gelato,dry,15.26,31-03-2022,1
+23108,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.29,31-03-2022,1
+23109,Taija Stolk,Youngjin Oh,Green Gelato,dry,15.29,31-03-2022,1
+23110,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.37,31-03-2022,1
+23111,Taija Stolk,Youngjin Oh,Green Gelato,dry,15.46,31-03-2022,1
+23112,Taija Stolk,Youngjin Oh,Nebula 2,dry,25.63,31-03-2022,1
+23113,Taija Stolk,Youngjin Oh,Milled RS,dry,25.83,31-03-2022,1
+23114,Taija Stolk,Youngjin Oh,Rockstar,dry,34.74,31-03-2022,1
+23115,Taija Stolk,Youngjin Oh,Dela Haze,dry,50.52,31-03-2022,1
+23116,Taija Stolk,Youngjin Oh,Sensi Star,dry,51.52,31-03-2022,1
+23117,Taija Stolk,Youngjin Oh,Dela Haze,dry,51.68,31-03-2022,1
+23118,Taija Stolk,Youngjin Oh,Dela Haze,dry,51.71,31-03-2022,1
+23119,Taija Stolk,Youngjin Oh,Dela Haze,dry,52.88,31-03-2022,1
+23120,Taija Stolk,Youngjin Oh,Sensi Star,dry,57.38,31-03-2022,1
+23121,Taija Stolk,Youngjin Oh,Rockstar,dry,57.42,31-03-2022,1
+23122,Taija Stolk,Youngjin Oh,Charrlotte's Angel,dry,58.54,31-03-2022,1
+23123,Taija Stolk,Youngjin Oh,Green Gelato,dry,60.02,31-03-2022,1
+23124,Taija Stolk,Youngjin Oh,Wedding Gelato,dry,61.64,31-03-2022,1
+23125,Taija Stolk,Youngjin Oh,Dela Haze,dry,67,31-03-2022,1
+23126,Taija Stolk,Youngjin Oh,Willow Weed High Priest,dry,67,31-03-2022,1
+23127,Taija Stolk,Youngjin Oh,Snow Bud,dry,67.03,31-03-2022,1
+23128,Taija Stolk,Youngjin Oh,Glueberry OG,dry,67.1,31-03-2022,1
+23129,Taija Stolk,Youngjin Oh,Think Fast,dry,67.13,31-03-2022,1
+23130,Taija Stolk,Youngjin Oh,Glueberry OG,dry,67.26,31-03-2022,1
+23131,Taija Stolk,Youngjin Oh,Death Bubba,dry,67.34,31-03-2022,1
+23132,Taija Stolk,Youngjin Oh,Garlic Z,dry,67.39,31-03-2022,1
+23133,Taija Stolk,Youngjin Oh,Green Gelato,dry,67.4,31-03-2022,1
+23134,Taija Stolk,Youngjin Oh,Glueberry OG,dry,67.45,31-03-2022,1
+23135,Taija Stolk,Youngjin Oh,Snow Bud,dry,67.5,31-03-2022,1
+23136,Taija Stolk,Youngjin Oh,Dela Haze,dry,67.53,31-03-2022,1
+23137,Taija Stolk,Youngjin Oh,Think Fast,dry,67.57,31-03-2022,1
+23138,Taija Stolk,Youngjin Oh,Fat Banana,dry,67.58,31-03-2022,1
+23139,Taija Stolk,Youngjin Oh,Think Fast,dry,67.66,31-03-2022,1
+23140,Taija Stolk,Youngjin Oh,Tutti Frutti,dry,67.72,31-03-2022,1
+23141,Taija Stolk,Youngjin Oh,GCG,dry,67.73,31-03-2022,1
+23142,Taija Stolk,Youngjin Oh,Critical 2.0,dry,67.74,31-03-2022,1
+23143,Taija Stolk,Youngjin Oh,Black Tuna,dry,67.75,31-03-2022,1
+23144,Taija Stolk,Youngjin Oh,Black Tuna,dry,67.93,31-03-2022,1
+23145,Taija Stolk,Youngjin Oh,Glueberry,dry,67.95,31-03-2022,1
+23146,Taija Stolk,Youngjin Oh,Strawberry Cough,dry,68.5,31-03-2022,1
+23147,Taija Stolk,Youngjin Oh,Think Fast,dry,68.5,31-03-2022,1
+23148,Taija Stolk,Youngjin Oh,Dela Haze,dry,68.79,31-03-2022,1
+23149,Taija Stolk,Youngjin Oh,Snow Bud,dry,69.2,31-03-2022,1
+23150,Taija Stolk,Youngjin Oh,Orange Bud,dry,69.5,31-03-2022,1
+23151,Taija Stolk,Youngjin Oh,Think Fast,dry,70.83,31-03-2022,1
+23152,Taija Stolk,Youngjin Oh,Snow Bud,dry,84.4,31-03-2022,1
+23153,Taija Stolk,Youngjin Oh,Sensi Star,dry,85.82,31-03-2022,1
+23154,Taija Stolk,Youngjin Oh,Snow Bud,dry,86.28,31-03-2022,1
+23155,Taija Stolk,Youngjin Oh,Think Fast,dry,87.41,31-03-2022,1
+23156,Taija Stolk,Youngjin Oh,Dela Haze,dry,90.01,31-03-2022,1
+23157,Taija Stolk,Youngjin Oh,Garlic Z,dry,90.15,31-03-2022,1
+23158,Taija Stolk,Youngjin Oh,Death Bubba,dry,90.17,31-03-2022,1
+23159,Taija Stolk,Youngjin Oh,Think Fast,dry,90.25,31-03-2022,1
+23160,Taija Stolk,Youngjin Oh,Glueberry OG,dry,90.4,31-03-2022,1
+23161,Taija Stolk,Youngjin Oh,Glueberry OG,dry,90.4,31-03-2022,1
+23162,Taija Stolk,Youngjin Oh,Critical 2.0,dry,90.48,31-03-2022,1
+23163,Taija Stolk,Youngjin Oh,Fat Banana,dry,90.55,31-03-2022,1
+23164,Taija Stolk,Youngjin Oh,Wedding Gelato,dry,90.6,31-03-2022,1
+23165,Taija Stolk,Youngjin Oh,Greenberry OG,dry,90.73,31-03-2022,1
+23166,Taija Stolk,Youngjin Oh,Think Fast,dry,90.75,31-03-2022,1
+23167,Taija Stolk,Youngjin Oh,Greenberry OG,dry,90.76,31-03-2022,1
+23168,Taija Stolk,Youngjin Oh,Think Fast,dry,90.88,31-03-2022,1
+23169,Taija Stolk,Youngjin Oh,Greenberry OG,dry,90.91,31-03-2022,1
+23170,Taija Stolk,Youngjin Oh,Glookies,dry,91.02,31-03-2022,1
+23171,Taija Stolk,Youngjin Oh,Think Fast,dry,91.05,31-03-2022,1
+23172,Taija Stolk,Youngjin Oh,Snow Bud,dry,91.06,31-03-2022,1
+23173,Taija Stolk,Youngjin Oh,Glueberry,dry,91.45,31-03-2022,1
+23174,Taija Stolk,Youngjin Oh,Nebula 2,dry,91.5,31-03-2022,1
+23175,Taija Stolk,Youngjin Oh,Glueberry,dry,91.51,31-03-2022,1
+23176,Taija Stolk,Youngjin Oh,Black Tuna,dry,91.63,31-03-2022,1
+23177,Taija Stolk,Youngjin Oh,Tutti Frutti,dry,92.08,31-03-2022,1
+23178,Taija Stolk,Youngjin Oh,Think Fast,dry,92.2,31-03-2022,1
+23179,Taija Stolk,Youngjin Oh,Nebula 2,dry,92.6,31-03-2022,1
+23180,Taija Stolk,Youngjin Oh,Dela Haze,dry,92.72,31-03-2022,1
+23181,Taija Stolk,Youngjin Oh,CBD Charlotte's Angel,dry,93.01,31-03-2022,1
+23182,Taija Stolk,Youngjin Oh,Glueberry,dry,93.56,31-03-2022,1
+23183,Taija Stolk,Youngjin Oh,Orange Bud,dry,93.6,31-03-2022,1
+23184,Taija Stolk,Youngjin Oh,Black Tuna,dry,94.51,31-03-2022,1
+23185,Taija Stolk,Youngjin Oh,Pink Lemonade,dry,94.68,31-03-2022,1
+23186,Taija Stolk,Youngjin Oh,Strawberry Cough,dry,94.7,31-03-2022,1
+23187,Taija Stolk,Youngjin Oh,GRG,dry,100,31-03-2022,1
+23188,Taija Stolk,Youngjin Oh,Greenberry OG,dry,101,31-03-2022,1
+23189,Taija Stolk,Youngjin Oh,Greenberry OG,dry,101.22,31-03-2022,1
+23190,Taija Stolk,Youngjin Oh,Pink Lemonade,dry,127.77,31-03-2022,1
+23191,Taija Stolk,Youngjin Oh,Willow Weed High Priest,dry,134.89,31-03-2022,1
+23192,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.18,31-03-2022,1
+23193,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.02,31-03-2022,1
+23194,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.28,31-03-2022,1
+23195,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.06,31-03-2022,1
+23196,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.23,31-03-2022,1
+23197,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.46,31-03-2022,1
+23198,Taija Stolk,Youngjin Oh,Black Tuna,dry,15.18,31-03-2022,1
+23199,Taija Stolk,Youngjin Oh,Pink Lemonade,dry,100,31-03-2022,1

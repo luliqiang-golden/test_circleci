@@ -1,0 +1,29 @@
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT api:app --timeout 300
+
+env_variables:
+  WEB_CONCURRENCY: 3 # http://docs.gunicorn.org/en/stable/settings.html#workers
+  GOOGLE_APPLICATION_CREDENTIALS: google-cloud-storage-key.json #this has to be copied to the python_scripts folder by the build
+  DB_HOST_APP_ENGINE: 172.17.0.1 #this has to be copied to the python_scripts folder by the build
+  DB: prod
+  UPLOADS_BUCKET: essex-uploads
+
+runtime_config:
+  python_version: 3.7
+
+manual_scaling:
+  instances: 1  
+
+resources:
+  cpu: 1
+  memory_gb: 1.5
+  disk_size_gb: 10
+
+network:
+  instance_tag: essex
+  name: essex-vpc
+  subnetwork_name: essex-vpc-subnet
+
+beta_settings:
+    cloud_sql_instances: essex-groweriq:northamerica-northeast1:essex-sql,essex-groweriq:northamerica-northeast1:essex-sql=tcp:5432

@@ -1,0 +1,24 @@
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT api:app --timeout 600
+default_expiration: "600s"
+
+env_variables:
+  WEB_CONCURRENCY: 3
+  GOOGLE_APPLICATION_CREDENTIALS: google-cloud-storage-key.json
+  DB_HOST_APP_ENGINE: 172.17.0.1
+  SENTRY_ENVIRONMENT: staging
+
+runtime_config:
+  python_version: 3.7
+
+manual_scaling:
+  instances: 1
+
+resources:
+  cpu: 4
+  memory_gb: 6.0
+  disk_size_gb: 20
+
+beta_settings:
+  cloud_sql_instances: groweriq-prod-mtl:northamerica-northeast1:groweriq-pg-prod-mtl,groweriq-prod-mtl:northamerica-northeast1:groweriq-pg-prod-mtl=tcp:5432

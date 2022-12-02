@@ -1,0 +1,12 @@
+name,type,email,address1,address2,city,province,postal code,country,telephone,organization_id
+Researcher,researcher,researcher@test.com,rue Levy,2807,Montreal,Quebec,H3C 5K4,Canada,514-754-6683,4
+License Holder,license holder,license_holder@test.com,Main St,2941,Aylesford,Nova Scotia,B0P 1C0,Canada,902-341-0182,4
+Lab,lab,lab@test.com,Baker Street,1920,London,Ontario,N0N 0N0,Canada,519-432-5226,4
+Wholesale,wholesale,wholesale@test.com,Horner Ave,302,Toronto,Ontario,M8W 4Y4,Canada,647-435-7336,4
+Distributor,distributor,distributor@test.com,Pape Ave,900,Toronto,Ontario,M4E 2V5,Canada,416-690-6621,4
+Retailer,retailer,retailer@test.com,Bridgeport Rd,3911,Alliston,Ontario,L9R 1H4,Canada,705-435-8535,4
+Supplier,supplier,supplier@test.com,Saskatchewan Dr,4765,Quebec,Quebec,S4P 3Y2,Canada,418-681-2931,4
+Patient,patient,patient@test.com,A Avenue,3139,Edmonton,Alberta,T5J 0K7,Canada,780-442-4052,4
+Government,government,government@test.com,Brook St,4216,Kentville,Nova Scotia,B4N 2N3,Canada,902-691-4086,4
+Individual,individual,individual@test.com,Toy Avenue,2418,Oshawa,Ontario,L1H 7K5,Canada,905-925-2519,4
+Recreational Consumer,recreational consumer,recreational_consumer@test.com,rue des Églises Est,169,Malartic,Quebec,J0Y 1Z0,Canada,819-757-1845,4

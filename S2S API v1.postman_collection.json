@@ -1,0 +1,2589 @@
+{
+  "info": {
+    "_postman_id": "70be90b6-22e5-4e7d-841c-72647a02edd9",
+    "name": "S2S API v1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [{
+      "_postman_id": "6763f651-86eb-4f2e-b097-8713ebbae98f",
+      "name": "Users",
+      "item": [{
+          "_postman_id": "c2717587-3df8-4fa4-bfce-0d1c05eecad2",
+          "name": "List Users",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/users",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e9096d66-72b6-4bfc-8317-2f741b04e223",
+          "name": "Get User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/users/1",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7e18c086-0d1f-4e6d-9b26-03f0b2df4d1c",
+          "name": "Create User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"daniel.favand+test1@wilcompute.com\",\n\t\"enabled\": true,\n\t\"role_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/users",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "fb2642d8-4702-4f84-bd93-3f1e5f13f306",
+          "name": "Update User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "PATCH",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"enabled\": \"False\",\n    \"super-cool\": true,\n    \"name\": \"daniel.favand+5@wilcompute.com\"\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/users/7",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "users",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "21572655-6c67-46ae-a415-dd4c2f3c35cd",
+          "name": "Delete User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "DELETE",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/users/7/",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "users",
+                "7",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "3b0ab96c-24ad-47c8-b5a2-6fa9f0029d78",
+      "name": "Roles",
+      "item": [{
+          "_postman_id": "f0111678-571a-40ff-8c1b-9d41237fff87",
+          "name": "List User Roles",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/roles",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "roles"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c87fe372-2aae-4c32-aacf-24dd3bfb4083",
+          "name": "Get User Role",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/roles/1",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "roles",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d19c0234-7db3-4ee2-9d3b-129c1e02dd0e",
+          "name": "Create User Role",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"admin6\",\n\t\"organization_id\": 2,\n\t\"permissions\": []\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/roles/",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "roles",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "19cc5f27-5c5f-4aaa-afe3-9792c0d153b5",
+          "name": "Update User Role",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "PATCH",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"created_by\": 1,\n    \"id\": \"1\",\n    \"name\": \"admin\",\n    \"organization_id\": 1,\n    \"permissions\": [\n        {\n            \"methods\": [\n                \"GET\",\n                \"POST\",\n                \"PATCH\"\n            ],\n            \"object\": \"users\"\n        },\n        {\n            \"methods\": [\n                \"GET\",\n                \"POST\",\n                \"PATCH\"\n            ],\n            \"object\": \"equipment\"\n        },\n        {\n            \"methods\": [\n                \"POST\"\n            ],\n            \"object\": \"uploads\"\n        },\n        {\n            \"methods\": [\n                \"GET\",\n                \"POST\",\n                \"PATCH\"\n            ],\n            \"object\": \"clients\"\n        },\n        {\n            \"methods\": [\n                \"GET\",\n                \"POST\",\n                \"DELETE\",\n                \"PATCH\"\n            ],\n            \"object\": \"taxonomies\"\n        },\n        {\n            \"methods\": [\n                \"GET\",\n                \"POST\",\n                \"DELETE\",\n                \"PATCH\"\n            ],\n            \"object\": \"taxonomy_options\"\n        },\n        {\n            \"methods\": [\n                \"GET\",\n                \"POST\",\n                \"PATCH\"\n            ],\n            \"object\": \"inventories\"\n        },\n        {\n            \"methods\": [\n                \"GET\",\n                \"POST\",\n                \"PATCH\"\n            ],\n            \"object\": \"products\"\n        },\n        {\n            \"methods\": [\n                \"GET\",\n                \"POST\",\n                \"DELETE\",\n                \"PATCH\"\n            ],\n            \"object\": \"roles\"\n        },\n        {\n            \"methods\": [\n                \"GET\",\n                \"POST\",\n                \"DELETE\",\n                \"PATCH\"\n            ],\n            \"object\": \"rooms\"\n        },\n        {\n            \"methods\": [\n                \"GET\",\n                \"POST\",\n                \"DELETE\",\n                \"PATCH\"\n            ],\n            \"object\": \"rules\"\n        },\n        {\n            \"methods\": [\n                \"GET\"\n            ],\n            \"object\": \"labels\"\n        },\n        {\n            \"methods\": [\n                \"GET\"\n            ],\n            \"object\": \"activities\"\n        },\n        {\n            \"action\": \"receive_inventory\"\n        },\n        {\n            \"action\": \"create_batch\"\n        },\n        {\n            \"action\": \"transfer_inventory\"\n        },\n        {\n            \"action\": \"create_mother\"\n        },\n        {\n            \"action\": \"propagate_cuttings\"\n        },\n        {\n            \"action\": \"propagate_seeds\"\n        },\n        {\n            \"action\": \"germinate_seeds\"\n        },\n        {\n            \"action\": \"destroy_material\"\n        },\n        {\n            \"action\": \"harvest_plants\"\n        },\n        {\n            \"action\": \"complete_drying\"\n        },\n        {\n            \"action\": \"complete_oil_extraction\"\n        },\n        {\n            \"action\": \"admin_adjustment\"\n        },\n        {\n            \"action\": \"lab_sample_sent\"\n        },\n        {\n            \"action\": \"lab_result_received\"\n        },\n        {\n            \"action\": \"queue_for_destruction\"\n        },\n        {\n            \"action\": \"complete_destruction\"\n        },\n        {\n            \"action\": \"update_stage\"\n        },\n        {\n            \"action\": \"update_room\"\n        },\n        {\n        \t\"action\": \"update_quarantine\"\n        }\n    ],\n    \"timestamp\": \"2018-06-21T10:19:32.873510-04:00\"\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/roles/1",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "roles",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1f0df89e-d0e9-4a97-9b9e-8923ed953d64",
+          "name": "Delete User Role",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "DELETE",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/roles/5/",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "roles",
+                "5",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "044a0412-ad5d-431e-accc-ceceb367d4b9",
+      "name": "Inventory",
+      "item": [{
+          "_postman_id": "1f96f033-00d3-4ce5-858d-03e38c295408",
+          "name": "List Inventory",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/inventories?filter=stats",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "inventories"
+              ],
+              "query": [{
+                "key": "filter",
+                "value": "stats"
+              }]
+            }
+          },
+          "response": [{
+              "id": "e776b4be-88eb-48db-b635-34b2d29b5873",
+              "name": "Filtered List",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {},
+                "url": {
+                  "raw": "{{api_base}}/organizations/1/inventories/?filter=type=mother",
+                  "host": [
+                    "{{api_base}}"
+                  ],
+                  "path": [
+                    "organizations",
+                    "1",
+                    "inventories",
+                    ""
+                  ],
+                  "query": [{
+                    "key": "filter",
+                    "value": "type=mother"
+                  }]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": "The type of encoding used on the data."
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self'",
+                  "name": "Content-Security-Policy",
+                  "description": "Custom header"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "The mime type of this content"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 19 Jun 2018 18:35:58 GMT",
+                  "name": "Date",
+                  "description": "The date and time that the message was sent"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "strict-origin-when-cross-origin",
+                  "name": "Referrer-Policy",
+                  "description": "Custom header"
+                },
+                {
+                  "key": "Server",
+                  "value": "gunicorn/19.8.1",
+                  "name": "Server",
+                  "description": "A name for the server"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31556926; includeSubDomains",
+                  "name": "Strict-Transport-Security",
+                  "description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding",
+                  "name": "Vary",
+                  "description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": "Informs the client of proxies through which the response was sent."
+                },
+                {
+                  "key": "X-Content-Security-Policy",
+                  "value": "default-src 'self'",
+                  "name": "X-Content-Security-Policy",
+                  "description": "Custom header"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff",
+                  "name": "X-Content-Type-Options",
+                  "description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN",
+                  "name": "X-Frame-Options",
+                  "description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "1; mode=block",
+                  "name": "X-XSS-Protection",
+                  "description": "Cross-site scripting (XSS) filter"
+                }
+              ],
+              "cookie": [],
+              "body": "{\"data\":[{\"id\":\"25\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-02-01T20:15:53\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"26\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-02-03T20:15:56\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"27\",\"name\":\"Indica Romulan Mother\",\"organization_id\":\"1\",\"strain\":\"Indica\",\"timestamp\":\"2018-02-15T20:16:13\",\"type\":\"mother\",\"variety\":\"Romulan\"},{\"id\":\"28\",\"name\":\"Indica Romulan Mother\",\"organization_id\":\"1\",\"strain\":\"Indica\",\"timestamp\":\"2018-02-16T20:16:15\",\"type\":\"mother\",\"variety\":\"Romulan\"},{\"id\":\"31\",\"name\":\"Indica Romulan Mother\",\"organization_id\":\"1\",\"strain\":\"Indica\",\"timestamp\":\"2018-06-18T17:41:05\",\"type\":\"mother\",\"variety\":\"Romulan\"},{\"id\":\"32\",\"name\":\"Indica Romulan Mother\",\"organization_id\":\"1\",\"strain\":\"Indica\",\"timestamp\":\"2018-06-18T18:50:43\",\"type\":\"mother\",\"variety\":\"Romulan\"},{\"id\":\"33\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:36:45\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"34\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:36:47\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"35\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:36:49\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"36\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:36:51\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"37\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:36:53\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"38\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:36:55\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"39\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:37:53\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"40\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:37:55\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"41\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:37:57\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"42\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:38:00\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"43\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:38:02\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"44\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:38:03\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"45\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:38:05\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"46\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:38:07\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"}],\"page\":1,\"per_page\":20,\"total\":24}\n"
+            },
+            {
+              "id": "02e46aff-a3d3-42c3-8b4a-d26f35de6248",
+              "name": "Unfiltered List",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {},
+                "url": {
+                  "raw": "{{api_base}}/organizations/1/inventories/",
+                  "host": [
+                    "{{api_base}}"
+                  ],
+                  "path": [
+                    "organizations",
+                    "1",
+                    "inventories",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": "The type of encoding used on the data."
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self'",
+                  "name": "Content-Security-Policy",
+                  "description": "Custom header"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "The mime type of this content"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 19 Jun 2018 18:34:51 GMT",
+                  "name": "Date",
+                  "description": "The date and time that the message was sent"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "strict-origin-when-cross-origin",
+                  "name": "Referrer-Policy",
+                  "description": "Custom header"
+                },
+                {
+                  "key": "Server",
+                  "value": "gunicorn/19.8.1",
+                  "name": "Server",
+                  "description": "A name for the server"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31556926; includeSubDomains",
+                  "name": "Strict-Transport-Security",
+                  "description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding",
+                  "name": "Vary",
+                  "description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": "Informs the client of proxies through which the response was sent."
+                },
+                {
+                  "key": "X-Content-Security-Policy",
+                  "value": "default-src 'self'",
+                  "name": "X-Content-Security-Policy",
+                  "description": "Custom header"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff",
+                  "name": "X-Content-Type-Options",
+                  "description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN",
+                  "name": "X-Frame-Options",
+                  "description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "1; mode=block",
+                  "name": "X-XSS-Protection",
+                  "description": "Cross-site scripting (XSS) filter"
+                }
+              ],
+              "cookie": [],
+              "body": "{\"data\":[{\"id\":\"23\",\"name\":\"Hybrid Cotton Candy Kush seeds\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-01-01T20:09:59\",\"type\":\"received inventory\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"24\",\"name\":\"Indica Romulan plants\",\"organization_id\":\"1\",\"strain\":\"Indica\",\"timestamp\":\"2018-01-15T20:13:58\",\"type\":\"received inventory\",\"variety\":\"Romulan\"},{\"id\":\"25\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-02-01T20:15:53\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"26\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-02-03T20:15:56\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"27\",\"name\":\"Indica Romulan Mother\",\"organization_id\":\"1\",\"strain\":\"Indica\",\"timestamp\":\"2018-02-15T20:16:13\",\"type\":\"mother\",\"variety\":\"Romulan\"},{\"id\":\"28\",\"name\":\"Indica Romulan Mother\",\"organization_id\":\"1\",\"strain\":\"Indica\",\"timestamp\":\"2018-02-16T20:16:15\",\"type\":\"mother\",\"variety\":\"Romulan\"},{\"id\":\"29\",\"name\":\"2018-03-Cotton Candy Kush\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-03-01T20:21:27\",\"type\":\"batch\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"30\",\"name\":\"2018-23-Romulan\",\"organization_id\":\"1\",\"strain\":\"Indica\",\"timestamp\":\"2018-04-01T19:52:28\",\"type\":\"batch\",\"variety\":\"Romulan\"},{\"id\":\"31\",\"name\":\"Indica Romulan Mother\",\"organization_id\":\"1\",\"strain\":\"Indica\",\"timestamp\":\"2018-06-18T17:41:05\",\"type\":\"mother\",\"variety\":\"Romulan\"},{\"id\":\"32\",\"name\":\"Indica Romulan Mother\",\"organization_id\":\"1\",\"strain\":\"Indica\",\"timestamp\":\"2018-06-18T18:50:43\",\"type\":\"mother\",\"variety\":\"Romulan\"},{\"id\":\"33\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:36:45\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"34\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:36:47\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"35\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:36:49\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"36\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:36:51\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"37\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:36:53\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"38\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:36:55\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"39\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:37:53\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"40\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:37:55\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"41\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:37:57\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"},{\"id\":\"42\",\"name\":\"Hybrid Cotton Candy Kush Mother\",\"organization_id\":\"1\",\"strain\":\"Hybrid\",\"timestamp\":\"2018-06-18T19:38:00\",\"type\":\"mother\",\"variety\":\"Cotton Candy Kush\"}],\"page\":1,\"per_page\":20,\"total\":32}\n"
+            }
+          ]
+        },
+        {
+          "_postman_id": "ef1289b7-d401-4464-93f9-89f62d4c7ba3",
+          "name": "Get Inventory",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/inventories/29",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "inventories",
+                "29"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "e129c362-e8f8-4140-8514-2bf70f91710b",
+      "name": "Activities",
+      "item": [{
+          "_postman_id": "365e3a97-9f6f-40b4-b8c0-225ec09c174d",
+          "name": "List Activities",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities?filter=name=queue_for_destruction",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ],
+              "query": [{
+                "key": "filter",
+                "value": "name=queue_for_destruction"
+              }]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b2f09ff0-d081-483b-a4e0-77dd8b57ecd2",
+          "name": "Get Activity",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities/3",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "52c08308-a4c8-4bbd-8dca-43bdf35fa0de",
+      "name": "Rules",
+      "item": [{
+          "_postman_id": "1c58031d-89fc-4db3-82d5-904fc07adc2b",
+          "name": "List Rules",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/rules?filter=activity=update_stage",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "rules"
+              ],
+              "query": [{
+                "key": "filter",
+                "value": "activity=update_stage"
+              }]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0a1186b2-a955-4e0a-8675-5677e0198ec2",
+          "name": "Get Rule",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/rules/18",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "rules",
+                "18"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5dc90bca-1826-4318-bbef-146346d91a77",
+          "name": "Create Rule",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"activity\": \"update_quarantine\",\n    \"conditions\": [\n    ],\n    \"description\": \"\",\n    \"name\": \"Room Update\"\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/rules",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "rules"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a8e8c220-d2af-4cc0-9999-31a5c2cbcc38",
+          "name": "Update Rule",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "PATCH",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"activity\": \"release_received_inventory\",\n    \"conditions\": [\n        {\n            \"condition_type\": \"stage_validation\",\n            \"field\": \"to_stage\",\n            \"inventory_id_field\": \"inventory_id\"\n        },\n        {\n            \"condition_type\": \"data_validation\",\n            \"field\": \"quarantined\",\n            \"regex\": \"False\"\n        }\n    ],\n    \"created_by\": 3,\n    \"description\": \"\",\n    \"id\": \"19\",\n    \"name\": \"Release Receive Inventory\",\n    \"organization_id\": 1,\n    \"timestamp\": \"2018-07-26T15:29:00.826454+00:00\"\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/rules/19",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "rules",
+                "19"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "event": [{
+          "listen": "prerequest",
+          "script": {
+            "id": "10c4ca05-9a9d-4b87-9a9d-b9571a9b24dd",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "51b08424-ec05-43bf-b996-bf1c281bf7b7",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_postman_id": "2703555c-26ed-461d-8e90-50c1080ada9d",
+      "name": "Rooms",
+      "item": [{
+          "_postman_id": "c149a0a9-b0e8-4f74-8a12-b8ff3ca21206",
+          "name": "List Rooms",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/rooms",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "rooms"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3bab6d4f-463a-464b-8373-722a90c8b124",
+          "name": "Create Rooms",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"The 401\",\n\t\"zone\": \"outside\"\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/rooms",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "rooms"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b6865925-d945-420c-aaad-080a29f9e8e6",
+          "name": "Update Room",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "PATCH",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"The 401\",\n\t\"climate\": \"high-speed-growing\",\n\t\"organization_id\": 2\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/rooms/6",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "rooms",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "157b5720-49f9-494b-98d2-3dab6a817b9a",
+          "name": "Delete Room",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "DELETE",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/rooms/6",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "rooms",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "7d99a22d-33ba-4db6-b441-e82b1879072f",
+      "name": "Equipment",
+      "item": [{
+          "_postman_id": "048addd0-40b0-4248-bd21-cfccd137683f",
+          "name": "List Equipment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/equipment",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "equipment"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "298dd503-45cc-4c03-9fb5-149287a6f8ae",
+          "name": "Get single equipment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/equipment/4",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "equipment",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "726ca465-4083-4f93-a243-795e62379792",
+          "name": "Create Equipment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Test gateway\",\n\t\"serial\": \"gateway123\",\n\t\"type\": \"sensor_gateway\"\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/equipment",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "equipment"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "85aa9c1c-9110-4126-8dcb-4e7f4addf2c1",
+          "name": "Update Equipment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "PATCH",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"created_by\": 3,\n    \"id\": \"4\",\n    \"name\": \"Test gateway\",\n    \"organization_id\": 1,\n    \"serial\": \"gateway123\",\n    \"timestamp\": \"2018-06-28T11:19:38.727880-04:00\",\n    \"type\": \"sensor_gateway\"\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/equipment/4",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "equipment",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "817be4b3-df46-448b-a594-daf678233c8d",
+      "name": "Labels",
+      "item": [{
+          "_postman_id": "10097a0d-e948-4f3b-83b6-b3489735efad",
+          "name": "List Labels",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomies/labels/options",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomies",
+                "labels",
+                "options"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d6fc8d37-3f3b-4483-b432-99e7ad0a46a4",
+          "name": "Get filled-out label",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/get-label/76?id=106",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "get-label",
+                "76"
+              ],
+              "query": [{
+                "key": "id",
+                "value": "106"
+              }]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7f6eb9fe-8ba7-4e8b-8b7b-a319e7fd1fbb",
+          "name": "Create Label",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Destruction Queue\",\n\t\"type\": \"item_for_destruction\",\n\t\"format\": \"ZPL\",\n\t\"template\":\"^XA\\r\\n \\r\\n^CF0,60\\r\\n^FO50,50^FDProduct for Destruction^FS\\r\\n^FO50,100^GB700,1,3^FS\\r\\n \\r\\n^CFA,30\\r\\n^FO50,120^FDDate: {queue_activity[\\\"timestamp\\\"]}^FS\\r\\n^FO50,160^FDVariety: {queue_activity[\\\"variety\\\"]}^FS\\r\\n^FO50,200^FDInventory ID: {queue_activity[\\\"from_inventory_id\\\"]}^FS\\r\\n^FO50,240^FDCollected From: {queue_activity[\\\"collected_from\\\"]}^FS\\r\\n^FO50,280^FDNet weight: {queue_activity[\\\"destroyed_qty\\\"]} {queue_activity[\\\"destroyed_qty_unit\\\"]}^FS\\r\\n^FO50,320^FDType of waste: {queue_activity[\\\"type_of_waste\\\"]}^FS\\r\\n^FO50,360^FDWeighed by: {queue_activity[\\\"weighed_by\\\"]}^FS\\r\\n^FO50,400^FDChecked by: {queue_activity[\\\"checked_by\\\"]}^FS\\r\\n \\r\\n^BY5,2,270\\r\\n^FO175,550^BC^FD{barcode_data}^FS\\r\\n \\r\\n^XZ\"\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomies/labels/options",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomies",
+                "labels",
+                "options"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "b97b0c78-d072-4f8e-836a-af0cfc43c810",
+      "name": "Taxonomies",
+      "item": [{
+          "_postman_id": "79301622-51cb-4160-ae1a-6da825ebff68",
+          "name": "List Taxonomies",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomies",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1a7a28ea-216e-4097-870d-1ca2f48796d3",
+          "name": "Get Taxonomy",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomies/1",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomies",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d4438797-3326-47ed-92d5-672447374675",
+          "name": "Create Taxonomy",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"labels\"\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomies",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7fae794e-8e3c-4185-aeb8-e43dcf821d56",
+          "name": "Update Taxonomy",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "PATCH",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"rooms2\",\n\t\"organization_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomies/4",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomies",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "90a0b559-607b-459b-9aba-6b2390f903ea",
+          "name": "Delete Taxonomy",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "DELETE",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomies/4",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomies",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "78e33c3f-03cc-4426-8055-8800d53e2708",
+      "name": "Taxonomy Options",
+      "item": [{
+          "_postman_id": "f480f6e4-6226-4283-a867-b50c60a315a5",
+          "name": "List Taxonomy Options",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomies/destruction_methods/options",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomies",
+                "destruction_methods",
+                "options"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "40c0c0d0-48e0-4e8f-b7dd-12d52f5b4c24",
+          "name": "Get Taxonomy Option",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomy_options/76",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomy_options",
+                "76"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1e68628e-c56b-42aa-a69e-359365e9ee60",
+          "name": "Create Taxonomy Option",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Item Queued for Destruction\", \n\t\"type\": \"item_for_destruction\",\n\t\"format\": \"ZPL\",\n\t\"template\": \"^XA\\r\\n  \\r\\n^CF0,60\\r\\n^FO50,50^FDProduct for Destruction^FS\\r\\n^FO50,100^GB700,1,3^FS\\r\\n  \\r\\n^CFA,30\\r\\n^FO50,120^FDDate: {queue_activity[timestamp]}^FS\\r\\n^FO50,160^FDVariety: {queue_activity[variety]}^FS\\r\\n^FO50,200^FDInventory ID: {queue_activity[from_inventory_id]}^FS\\r\\n^FO50,240^FDCollected From: {queue_activity[collected_from]}^FS\\r\\n^FO50,280^FDNet weight: {queue_activity[destroyed_qty]} {queue_activity[destroyed_qty_unit]}^FS\\r\\n^FO50,320^FDType of waste: {queue_activity[type_of_waste]}^FS\\r\\n^FO50,360^FDWeighed by: {queue_activity[weighed_by]}^FS\\r\\n^FO50,400^FDChecked by: {queue_activity[checked_by]}^FS\\r\\n  \\r\\n^BY5,2,270\\r\\n^FO175,550^B7^FD{barcode_data}^FS\\r\\n  \\r\\n^XZ\"\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomies/labels/options",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomies",
+                "labels",
+                "options"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "2931c7bd-2c53-46b2-966a-a71e945e2e28",
+          "name": "Update Taxonomy Option",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "PATCH",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"created_by\": 3,\n    \"format\": \"ZPL\",\n    \"id\": \"76\",\n    \"name\": \"Destruction Queue\",\n    \"organization_id\": 1,\n    \"taxonomy_id\": 13,\n    \"template\": \"^XA\\r\\n \\r\\n^CF0,60\\r\\n^FO50,50^FDProduct for Destruction^FS\\r\\n^FO50,100^GB700,1,3^FS\\r\\n \\r\\n^CFA,30\\r\\n^FO50,120^FDDate: {queue_activity[timestamp]}^FS\\r\\n^FO50,160^FDVariety: {queue_activity[variety]}^FS\\r\\n^FO50,200^FDInventory ID: {queue_activity[from_inventory_id]}^FS\\r\\n^FO50,240^FDCollected From: {queue_activity[collected_from]}^FS\\r\\n^FO50,280^FDNet weight: {queue_activity[destroyed_qty]} {queue_activity[destroyed_qty_unit]}^FS\\r\\n^FO50,320^FDType of waste: {queue_activity[type_of_waste]}^FS\\r\\n^FO50,360^FDWeighed by: {queue_activity[weighed_by]}^FS\\r\\n^FO50,400^FDChecked by: {queue_activity[checked_by]}^FS\\r\\n \\r\\n^BY5,2,270\\r\\n^FO175,550^B7^FD{barcode_data}^FS\\r\\n \\r\\n^XZ\",\n    \"timestamp\": \"2018-07-13T15:03:08.948118-04:00\",\n    \"type\": \"item_for_destruction\"\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomy_options/76",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomy_options",
+                "76"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e0d909ed-f081-4b7f-a4c2-b51c723cc47b",
+          "name": "Delete Taxonomy",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "DELETE",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomies/12/",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomies",
+                "12",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "baecf350-ba10-4c2c-8145-c1e275850643",
+          "name": "Delete Taxonomy Options",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "DELETE",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/taxonomy_options/14",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "taxonomy_options",
+                "14"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "48fe1a46-16ce-4f35-967b-ffb3e8def8f8",
+      "name": "Organizations",
+      "item": [{
+          "_postman_id": "5f0d9eac-c825-4706-815d-a05f78f8499f",
+          "name": "Get Organization",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{api_base}}/organizations",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "148ce512-f32e-457f-9973-2ab5007c9b33",
+          "name": "Create Organization",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Wilcompute Growers\"\n}"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "event": [{
+          "listen": "prerequest",
+          "script": {
+            "id": "6493d7ea-f6ed-4412-a8dc-55b168f170e1",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "e290556f-d3a6-48e5-8673-593efde562bf",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_postman_id": "016c8a80-6b84-41ac-add4-1756cd9fa3a3",
+      "name": "Uploads",
+      "item": [{
+        "_postman_id": "bfe5e4d5-67a8-4e66-a181-e4abda1142d2",
+        "name": "Create Upload",
+        "request": {
+          "auth": {
+            "type": "bearer",
+            "bearer": [{
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }]
+          },
+          "method": "POST",
+          "header": [{
+            "key": "Content-Type",
+            "value": "application/json"
+          }],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n\t\"name\": \"seed-to-sale-api-logo.png\",\n\t\"content_type\": \"image/png\"\n}"
+          },
+          "url": {
+            "raw": "{{api_base}}/organizations/1/uploads",
+            "host": [
+              "{{api_base}}"
+            ],
+            "path": [
+              "organizations",
+              "1",
+              "uploads"
+            ]
+          }
+        },
+        "response": []
+      }],
+      "event": [{
+          "listen": "prerequest",
+          "script": {
+            "id": "6493d7ea-f6ed-4412-a8dc-55b168f170e1",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "e290556f-d3a6-48e5-8673-593efde562bf",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_postman_id": "90c2a042-93da-4f5c-8ceb-38cdd1da631a",
+      "name": "Activities",
+      "item": [{
+          "_postman_id": "147e167e-901b-4eee-91b6-fd6b7650a73c",
+          "name": "Admin Adjustment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"new_stage\": \"stage-2\",\n    \"inventory_id\": 2,\n    \"name\": \"admin_adjustment\",\n    \"admin_adjustment_explanation\": \"Fixing a user error in propagation process\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d86e5624-97db-4db7-95f7-eedbdb0b5f8d",
+          "name": "ReceiveInventory",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n            \"name\": \"receive_inventory\",\n            \"proof_of_purchase\": \"receipt.png\",\n            \"upload_id\": 2,\n            \"received_from_person\": \"Bob Wilson\",\n            \"received_at_address\": \"123 Corner St., Wallaby ON, M6S W3F\",\n            \"date_received\": \"2018-02-04\",\n            \"substance\": \"fresh\",\n            \"to_qty\": \"20\",\n            \"to_qty_unit\": \"seeds\",\n            \"brand\": \"ABC Brand\",\n            \"intended_use\": \"Sowing seeds\",\n            \"description\": \"Little seeds for the earth\",\n            \"note\": \"from the new strain\",\n            \"strain\": \"Hybrid\",\n            \"variety\": \"testy2\"\n        }\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4280e982-5c82-4c0b-9f3c-d1d6f844ea0d",
+          "name": "Create Batch",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"variety\": \"Animal Cookies\",\n    \"name\": \"create_batch\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d4ad67d4-08d2-4306-bf66-f705f4bfed88",
+          "name": "Transfer Inventory",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"strain\": \"Indica\",\n    \"variety\": \"Grapefruit\",\n    \"from_inventory_id\": 2,\n    \"to_inventory_id\": 6,\n    \"from_qty\": 20,\n    \"to_qty\": 20,\n    \"from_qty_unit\": \"plants\",\n    \"to_qty_unit\": \"plants\",\n    \"name\": \"transfer_inventory\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4a107a87-680c-4f44-961a-fc34541cec3d",
+          "name": "Create Mother",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n            \"name\": \"create_mother\",\n            \"from_inventory_id\": 5,\n            \"from_qty\":1,\n    \t    \"to_qty\": 1,\n    \t    \"from_qty_unit\": \"plants\",\n            \"to_qty_unit\": \"plants\",\n            \"strain\": \"Hybrid\",\n            \"variety\": \"Pineapple Express\"\n        }\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "eb98b1a5-79b2-4b45-be79-86b8da3d0019",
+          "name": "Propagate Cuttings",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"propagate_cuttings\",\n    \"from_inventory_id\": 6,\n    \"to_inventory_id\": 7,\n    \"to_qty\": 80,\n    \"to_qty_unit\": \"plants\",\n    \"source_count\": 1\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c524b891-d63a-4c17-8c61-554959f30b04",
+          "name": "Propagate Seeds",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"propagate_seeds\",\n    \"from_inventory_id\": 2,\n    \"from_qty\": 100,\n    \"from_qty_unit\": \"seeds\",\n    \"to_inventory_id\": 3,\n    \"to_qty\": 100,\n    \"to_qty_unit\": \"seeds\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6609db1a-5a05-4f2b-9ef1-97cf9330f3e5",
+          "name": "Germinate Seeds",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"germinate_seeds\",\n    \"from_inventory_id\": 29,\n    \"from_qty\": 60,\n    \"from_qty_unit\": \"seeds\",\n    \"to_inventory_id\": 29,\n    \"to_qty\": 60,\n    \"to_qty_unit\": \"plants\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "053e4f78-455d-4e09-9a50-5a0e534755f7",
+          "name": "Destroy Material",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"destroy_material\",\n    \"destruction_timestamp\": \"2018-07-10T15:24:50.927Z\",\n    \"method_of_destruction\": \"Kitty litter\",\n    \"witness_1\": \"Dario\",\n    \"witness_1_role\": \"PIC\",\n    \"witness_2\": \"Shila\",\n    \"witness_2_role\": \"QA\",\n    \"completed_queue_destruction_activities\": [{\n    \t\"queue_destruction_activity_id\": \"106\",\n    \t\"destroyed_qty\": 1,\n    \t\"destroyed_qty_unit\": \"g\"\n    \t}]\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b1cd3a9c-6309-4ba6-9ce4-e86722f2f0ce",
+          "name": "Queue For Destruction",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"name\": \"queue_for_destruction\",\n\"from_inventory_id\": \"29\",\n\"destroyed_qty\": \"1\",\n\"destroyed_qty_unit\": \"g\",\n\"variety\": \"Mango Kush\",\n\"type_of_waste\": \"stems\",\n\"weighed_by\": \"Andrew\",\n\"checked_by\": \"Chad\",\n\"reason_for_destruction\": \"Daily sweep\",\n\"collected_from\": \"Room 101\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "78b4d7ff-4633-4511-ba81-7854deb92a73",
+          "name": "Harvest Plants",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"harvest_plants\",\n    \"from_inventory_id\": 30,\n    \"from_qty\": 170,\n    \"from_qty_unit\": \"plants\",\n    \"to_inventory_id\": 30,\n    \"to_qty\": 1700,\n    \"to_qty_unit\": \"g-wet\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c336a72d-38c8-4793-bbbd-9a3e5e21135b",
+          "name": "Lab Sample Sent",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"lab_sample_sent\",\n\t\"from_inventory_id\": 29,\n\t\"from_qty\": 75,\n\t\"from_qty_unit\": \"g-dry\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ca8fbffc-6a49-4e76-838f-66644ef22aa5",
+          "name": "Lab Result Received",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"lab_result_received\",\n\t\"inventory_id\": \"29\",\n\t\"lab_sample_sent_activity_id\": \"65\",\n\t\"lab_result\": \"passed\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c8413f23-31e8-49b0-80f4-9c292800e45c",
+          "name": "Complete Drying",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"complete_drying\",\n    \"from_inventory_id\": 30,\n    \"from_qty\": 700,\n    \"from_qty_unit\": \"g-wet\",\n    \"to_inventory_id\": 30,\n    \"to_qty\": 140,\n    \"to_qty_unit\": \"g-dry\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6636895d-0239-4887-83d3-820e560dbb43",
+          "name": "Complete Oil Extraction",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"complete_oil_extraction\",\n    \"from_inventory_id\": 21,\n    \"from_qty\": 140,\n    \"from_qty_unit\": \"g-wet\",\n    \"to_inventory_id\": 21,\n    \"to_qty\": 20,\n    \"to_qty_unit\": \"ml\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7d1c7856-d10a-4f42-8784-3895bfd16fc2",
+          "name": "Update Stage",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"name\": \"update_stage\",\n\"inventory_id\": \"29\",\n\"to_stage\": \"flowering\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a50bd15b-0d62-4946-95e0-d8d00cb1a179",
+          "name": "Update Quarantine",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"name\": \"update_quarantine\",\n\"inventory_id\": \"29\",\n\"quarantined\": true\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "33621810-3ec9-4d56-881e-b812c3b8f2d6",
+          "name": "Update Room",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"name\": \"update_room\",\n\"inventory_id\": \"29\",\n\"to_room\": \"GRW-0012\"\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e5df95c4-56b9-423b-8950-a4852a981a2f",
+          "name": "Release Received Inventory",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }]
+            },
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"name\": \"release_received_inventory\",\n\"inventory_id\": \"42\",\n\"to_stage\": \"received-approved\",\n\"quarantined\": false\n}\n"
+            },
+            "url": {
+              "raw": "{{api_base}}/organizations/1/activities",
+              "host": [
+                "{{api_base}}"
+              ],
+              "path": [
+                "organizations",
+                "1",
+                "activities"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "event": [{
+          "listen": "prerequest",
+          "script": {
+            "id": "6493d7ea-f6ed-4412-a8dc-55b168f170e1",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "e290556f-d3a6-48e5-8673-593efde562bf",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_postman_id": "9c740657-4256-4ff2-96a2-ca8d7f9ce5c5",
+      "name": "Login",
+      "event": [{
+        "listen": "test",
+        "script": {
+          "id": "b459e668-5ca8-4b3d-9e0a-41270710c62e",
+          "type": "text/javascript",
+          "exec": [
+            "pm.test(\"Set environment token\", function() {",
+            "    var jsonData = pm.response.json();",
+            "    pm.environment.set(\"token\", jsonData.access_token);",
+            "})",
+            ""
+          ]
+        }
+      }],
+      "request": {
+        "method": "POST",
+        "header": [{
+          "key": "Content-Type",
+          "value": "application/json"
+        }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n        \"username\": \"tests+s2s-dev@wilcompute.com\",\n        \"password\": \"SeedTest2018\"\n    }"
+        },
+        "url": {
+          "raw": "{{api_base}}/login",
+          "host": [
+            "{{api_base}}"
+          ],
+          "path": [
+            "login"
+          ]
+        },
+        "description": "This will log in using the test user account, and grab the access_token. You must have an environment created, and have a variable \"token\" in your environment. You must also select the environment! Otherwise the token will not be saved and you will wonder why your requests are failing."
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [{
+        "key": "accessToken",
+        "value": "juIs1XOUDGQx677VAmkH52-amA6NwER8",
+        "type": "string"
+      },
+      {
+        "key": "tokenType",
+        "value": "Bearer",
+        "type": "string"
+      },
+      {
+        "key": "addTokenTo",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [{
+      "listen": "prerequest",
+      "script": {
+        "id": "783094f0-a562-4833-aff7-c509c94c648a",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "0a47f3ea-ae55-45a2-b451-708458eadffe",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [{
+      "id": "ed4ae9d6-8f2f-4f33-8cdf-064d9650cfdc",
+      "key": "api_base_cloud",
+      "value": "https://dev.groweriq.ca/v1",
+      "type": "string"
+    },
+    {
+      "id": "901cb62e-fb1e-4ccf-8789-0b7e9eeab137",
+      "key": "api_base_local",
+      "value": "http://127.0.0.1:5000/v1",
+      "type": "string"
+    },
+    {
+      "id": "4beee391-5a33-4b62-8c4f-f42815a88bda",
+      "key": "api_base",
+      "value": "{{api_base_cloud}}",
+      "type": "string"
+    }
+  ]
+}

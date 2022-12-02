@@ -1,0 +1,28 @@
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT api:app --timeout 600
+default_expiration: "600s"
+
+env_variables:
+  WEB_CONCURRENCY: 3 # http://docs.gunicorn.org/en/stable/settings.html#workers
+  GOOGLE_APPLICATION_CREDENTIALS: google-cloud-storage-key.json
+  DB_HOST_APP_ENGINE: 172.17.0.1 #this has to be copied to the python_scripts folder by the build
+
+runtime_config:
+  python_version: 3.7
+
+manual_scaling:
+  instances: 1  
+
+resources:
+  cpu: 1
+  memory_gb: 1.5
+  disk_size_gb: 10
+
+network:
+  instance_tag: lot420
+  name: lot420-vpc
+  subnetwork_name: lot420-vpc-subnet
+
+beta_settings:
+    cloud_sql_instances: lot420-groweriq:northamerica-northeast1:lot420-sql,lot420-groweriq:northamerica-northeast1:lot420-sql=tcp:5432

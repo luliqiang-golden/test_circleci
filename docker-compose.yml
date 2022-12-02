@@ -1,0 +1,55 @@
+version: '3.6'
+services:
+  api:
+    build: ./
+    container_name: api
+    depends_on:
+      - db
+    dns: 8.8.8.8
+    image: s2s-api
+    networks:
+      - s2s
+    ports:
+      - "5000:5000"
+    tty: true
+    volumes:
+      - ./:/api/
+  db:
+    build: ./db/
+    container_name: db
+    env_file:
+      - .dockerenv
+    image: s2s-db
+    networks:
+      - s2s
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  pgadmin:
+    container_name: pgadmin
+    depends_on:
+      - db
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@groweriq.ca
+      - PGADMIN_DEFAULT_PASSWORD=pgadmin
+    image: dpage/pgadmin4:latest
+    logging:
+      driver: none
+    networks:
+      - s2s
+    ports:
+      - "57251:80"
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+
+networks:
+  s2s:
+    name: s2s
+
+volumes:
+  postgres-data:
+    name: postgres-data
+  pgadmin:
+    name: pgadmin
